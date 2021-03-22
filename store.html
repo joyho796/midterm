@@ -71,9 +71,9 @@
         </form>
         <button>Submit Order</button>
         <br><br>
-        <p>Sub-total: $0</p>
-        <p>Tax: $0</p>
-        <p>Total: $0</p>
+        <p id="subtotal">Sub-total: $0</p>
+        <p id="tax">Tax(6.25%): $0</p>
+        <p id="total">Total: $0</p>
         <br><br>
     </div>
 
@@ -88,10 +88,10 @@
                 subtotal = totalAT = totalBT = tax = 0; 
 
                 // Update subtotal per item
-                for (i = 0; i < 5; i++)
+                for (i = 0; i < donate_Items.length;; i++)
                 {
-                    costBT = menuItems[i].cost;
-                    quantity = parseInt(document.getElementsByName("quan" + i)[0].value)
+                    costBT = donate_items[i].cost;
+                    quant = parseInt(document.getElementsByName("quantity")[i].value)
                     subtotal = costBT * quantity;
                     document.getElementsByName("menuTable")[0].rows[i+1].cells[3].children[0].value = subtotal.toFixed(2)
                     totalBT += subtotal;
