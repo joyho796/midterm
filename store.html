@@ -38,7 +38,20 @@
         Due to the pandemic, we encourage you to make orders through our online store.</p>
         <br><br>
     </div>
+    <script type="text/javascript">
+        function DonateItem(name, cost)
+        {
+            this.name = name;
+            this.cost=cost;
+        }
 
+        donate_items = new Array(
+            new DonateItem("Food", 4.5),
+            new DonateItem("Toy(s)", 6.25),
+            new DonateItem("Care", 5.25),
+            new DonateItem("Merch", 6.5),
+        );
+    </script>
     <div>
         <h2><input type="number" name="quantity" min="1" max="10" value="0">&nbspFood($7/meal)</h2>
         <h2><input type="number" name="quantity" min="1" max="10" value="0">&nbspToys($5/toy)</h2>
@@ -59,8 +72,41 @@
         <button>Submit Order</button>
         <br><br>
         <p>[Order subtotal, tax, total confirmation and such]</p>
+        <p>[Order subtotal, tax, total confirmation and such]</p>
+        <p>[Order subtotal, tax, total confirmation and such]</p>
         <br><br><br>
     </div>
+
+    <script type="text/javascript">
+        window.onload = function() {
+            for (i = 0; i < donate_Items.length; i++)
+                document.getElementsByName("quantity")[i].onchange=function(){updateAllTotals()};
+
+            function updateAllTotals()
+            {
+                var subtotal, totalAT, totalBT, tax;
+                subtotal = totalAT = totalBT = tax = 0; 
+
+                // Update subtotal per item
+                for (i = 0; i < 5; i++)
+                {
+                    costBT = menuItems[i].cost;
+                    quantity = parseInt(document.getElementsByName("quan" + i)[0].value)
+                    subtotal = costBT * quantity;
+                    document.getElementsByName("menuTable")[0].rows[i+1].cells[3].children[0].value = subtotal.toFixed(2)
+                    totalBT += subtotal;
+                    tax = totalBT * 0.0625;
+                    totalAT = totalBT + tax;
+                }
+
+                // Update totals for entire order
+                document.getElementById("subtotal").value = totalBT.toFixed(2); 
+                document.getElementById("tax").value = tax.toFixed(2); 
+                document.getElementById("total").value = totalAT.toFixed(2);
+            }
+        };
+
+    </script>
 
     <div id="footer">
         <br><br>
