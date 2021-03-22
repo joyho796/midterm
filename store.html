@@ -79,7 +79,7 @@
 
     <script type="text/javascript">
         window.onload = function() {
-            for (i = 0; i < donate_Items.length; i++)
+            for (i = 0; i < donate_items.length; i++)
                 document.getElementsByName("quantity")[i].onchange=function(){updateAllTotals()};
 
             function updateAllTotals()
@@ -87,7 +87,7 @@
                 var subtotal, totalAT, totalBT, tax;
                 subtotal = totalAT = totalBT = tax = 0; 
 
-                for (i = 0; i < donate_Items.length;; i++)
+                for (i = 0; i < donate_items.length; i++)
                 {
                     costBT = donate_items[i].cost;
                     quant = parseInt(document.getElementsByName("quantity")[i].value)
