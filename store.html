@@ -48,7 +48,7 @@
         }
 
         donate_items = new Array(
-            new DonateItem("Food", 7),
+            new DonateItem("Meal(s)", 7),
             new DonateItem("Toy(s)", 5),
             new DonateItem("Care", 11),
             new DonateItem("Merch", 15),
@@ -64,7 +64,7 @@
     <div>
         <h2>Submit an order</h2>
         <br>
-        <p>[Order summary]</p>
+        <p id="summary">[Order summary]</p>
         <br>
         <form>
             <p>Name: <input type="text"  name="name"></p><br>
@@ -86,6 +86,7 @@
 
             function updateAllTotals()
             {
+                updateSummary();
                 var subtotal, totalAT, totalBT, tax;
                 subtotal = totalAT = totalBT = tax = 0; 
 
@@ -103,6 +104,21 @@
                 $("#subtotal").html("Sub-total: $" + totalBT.toFixed(2))
                 $("#tax").html("Tax(6.25%): $" + tax.toFixed(2))
                 $("#total").html("Total: $" + totalAT.toFixed(2))
+            }
+
+            function updateSummary()
+            {
+                summaryString = "<p>Order Summary:</p>";
+                for (i = 0; i < donate_items.length; i++)
+                {
+                    quant = parseInt(document.getElementsByName("quantity")[i].value);
+                    if(quant != 0){
+                        number = donate_items[i].cost * quant;
+                        temp = "<p>"+ quant + " " +donate_items[i].name+" = $"+number+"</p>"
+                        summaryString += temp;
+                    }
+                }
+                $("#summary").html(summaryString)
             }
         };
 
