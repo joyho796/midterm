@@ -87,22 +87,20 @@
                 var subtotal, totalAT, totalBT, tax;
                 subtotal = totalAT = totalBT = tax = 0; 
 
-                // Update subtotal per item
                 for (i = 0; i < donate_Items.length;; i++)
                 {
                     costBT = donate_items[i].cost;
                     quant = parseInt(document.getElementsByName("quantity")[i].value)
                     subtotal = costBT * quantity;
-                    document.getElementsByName("menuTable")[0].rows[i+1].cells[3].children[0].value = subtotal.toFixed(2)
                     totalBT += subtotal;
-                    tax = totalBT * 0.0625;
-                    totalAT = totalBT + tax;
                 }
+                tax = totalBT * 0.0625;
+                totalAT = totalBT + tax;
 
                 // Update totals for entire order
-                document.getElementById("subtotal").value = totalBT.toFixed(2); 
-                document.getElementById("tax").value = tax.toFixed(2); 
-                document.getElementById("total").value = totalAT.toFixed(2);
+                $("#subtotal").html("Sub-total: $" + totalBT.toFixed(2))
+                $("#tax").html("Tax(6.25%): $" + tax.toFixed(2))
+                $("#total").html("Total: $" + totalAT.toFixed(2))
             }
         };
 
