@@ -140,7 +140,7 @@ td {
 }
 
 /* Form styling */
-button {
+#button {
     font-family: Verdana;
     font-size: 18px;
     background-color: rgba(0,0,0,0);
@@ -154,11 +154,11 @@ button {
     transition: background-color 0.5s;
 }
 
-button:hover {
+#button:hover {
     background-color: rgba(122,182,184,1);
     color: rgb(255, 255, 255);
 }
 
-button:focus {
+#button:focus {
     outline: none;
 }
