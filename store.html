@@ -164,9 +164,9 @@
                     alert(errString)
                     event.preventDefault();
                 }else{
+                    orderSummary = "Order Summary:\n";
                     for (i = 0; i < donate_items.length; i++)
                     {
-                        orderSummary = "Order Summary:\n";
                         quant = parseInt(document.getElementsByName("quantity")[i].value);
                         if(quant != 0){
                             number = donate_items[i].cost * quant;
