@@ -164,6 +164,16 @@
                     alert(errString)
                     event.preventDefault();
                 }else{
+                    for (i = 0; i < donate_items.length; i++)
+                    {
+                        orderSummary = "Order Summary:\n";
+                        quant = parseInt(document.getElementsByName("quantity")[i].value);
+                        if(quant != 0){
+                            number = donate_items[i].cost * quant;
+                            temp = quant + " " +donate_items[i].name+" = $"+number+"\n"
+                            orderSummary += temp;
+                        }
+                    }
                     alert("Thanks for your donation!\n\n" +
                         orderSummary + "\n" +
                         "Order Total: $" + $("#total").val()
