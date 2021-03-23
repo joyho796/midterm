@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+
+<head>
+    <title>LEND A PAW | Animals</title>
+    <link href="style.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="script.js"></script>
+    <style>
+        @media (max-width: 800px) {
+            #flex {
+            flex-direction: column;
+        }
+}
+    </style>
+</head>
+
+<body>
+
+    <div id="header">
+        <ul>
+            <li style="float: left">
+                <a href="index.html" style="padding-top:20px; padding-right: 0px">
+                    <img src="images/logo.png" alt="logo" style="width: 100px; height: 32px">
+                </a>
+            </li>
+            <li style="float: left;">
+                <a href="index.html" style="font-size:36px; padding-top: 8px; font-weight: bold;text-shadow: 1.5px 1.5px rgba(178,219,203,1);">Lend A Paw
+                </a>
+            </li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="store.html">Store</a></li>
+            <li><a href="help.html">Help Us</a></li>
+        </ul>
+
+        <h1>Our Animals</h1>
+
+    </div>
+
+    <div id="mobile" style="background-image: url('images/background.png');background-size: cover;background-position: center top;">
+        <ul>
+            <li style="float: left">
+                <a href="index.html" style="padding-top:20px; padding-right: 0px">
+                    <img src="images/logo.png" alt="logo" style="width: 100px; height: 32px">
+                </a>
+            </li>
+            <li style="float: left;">
+                <a href="index.html" style="font-size:36px; padding-top: 8px; font-weight: bold;text-shadow: 1.5px 1.5px rgba(178,219,203,1);">Lend A Paw
+                </a>
+            </li>
+            <li><span onclick="openNav()" style="font-size:42px;text-decoration: bold;padding: 0px 38px; padding-left:0px">&#8801</span></li>
+        </ul>
+        <div id="mobileNav" class="overlay">
+
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+            <div class="overlay-content">
+                <a href="help.html">Help Us</a>
+                <a href="store.html">Store</a>
+                <a href="events.html">Events</a>
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact</a>
+            </div>
+
+        </div>
+
+        <h1>Our Animals</h1>
+    </div>
+
+    <div>
+        <br><br><br>
+        <h2>Adopt and Foster</h2><br>
+        <p>Below is a brief listing of some of our animals that are looking for loving homes to stay at. If you are interested, please sent us an email or come visit us at our shelter to meet the animals. If you don't think any of these animals would be a good fit for you, you can come to the shelter and see the full listings.</p><br>
+        <button onclick="document.location='contact.html'">Contact Us</button>
+    </div>
+
+    <div>
+        <br><br>
+        <h2>Looking for Foster Parents</h2>
+        <br>
+        <h3>Appletini</h3><br>
+        <div id="flex" style="width:80%;margin:auto">
+        <img src="images/foster1.png" alt="Appletini" style="width: 60%; min-width: 350px; max-width: 500px; margin: auto"><br>
+        <p><strong>Age:</strong> 3 Weeks<br>
+            <strong>Sex:</strong> Female<br>
+            <strong>Temperment:</strong> Hungry, hungry!<br>
+        </p>
+        </div>
+        <br><br><br>
+
+        <h3>Phineas + Ferb</h3><br>
+        <div id="flex" style="width:80%;margin:auto">
+        <img src="images/foster2.png" alt="P+F" style="width: 60%; min-width: 350px; max-width: 500px; margin: auto"><br>
+        <p><strong>Age:</strong> 1 Month<br>
+            <strong>Sex:</strong> Both female<br>
+            <strong>Temperment:</strong> Affectionate, energetic<br>
+        </p>
+        </div>
+        <br><br><br>
+    </div>
+
+    <div>
+        <br>
+        <h2>Looking for a Forever Home</h2><br>
+        <h3>Lily</h3><br>
+        <div id="flex" style="width:80%;margin:auto">
+        <img src="images/adopt1.png" alt="Lily" style="width: 60%; min-width: 350px; max-width: 500px; margin: auto"><br>
+        <p><strong>Age:</strong> 8 Months<br>
+            <strong>Sex:</strong> Female<br>
+            <strong>Temperment:</strong> Playful, affectionate<br>
+        </p>
+        </div>
+        <br><br><br>
+
+        <h3>Marcello</h3><br>
+        <div id="flex" style="width:80%;margin:auto">
+        <img src="images/adopt2.png" alt="Marcello" style="width: 60%; min-width: 350px; max-width: 500px; margin: auto"><br>
+        <p><strong>Age:</strong> 5 Months<br>
+            <strong>Sex:</strong> Male<br>
+            <strong>Temperment:</strong> Energetic, obedient<br>
+        </p>
+        </div>
+        <br><br><br>
+
+        <h3>Smee</h3><br>
+        <div id="flex" style="width:80%;margin:auto">
+        <img src="images/adopt3.png" alt="Smee" style="width: 60%; min-width: 350px; max-width: 500px; margin: auto"><br>
+        <p><strong>Age:</strong> 2 Years<br>
+            <strong>Sex:</strong> Male<br>
+            <strong>Temperment:</strong> Loving, talkative<br>
+        </p>
+        </div>
+        <br><br><br>
+
+        <h3>Todd</h3><br>
+        <div id="flex" style="width:80%;margin:auto">
+        <img src="images/adopt4.png" alt="Todd" style="width: 60%; min-width: 350px; max-width: 500px; margin: auto"><br>
+        <p><strong>Age:</strong> 3 Months<br>
+            <strong>Sex:</strong> Male<br>
+            <strong>Temperment:</strong> Patient, affectionate<br>
+        </p>
+        </div>
+        <br><br><br>
+
+
+    </div>
+    <div id="footer">
+        <br><br>
+        <div id="flex">
+            <p>
+            <a href="about.html">ABOUT</a>&nbsp|&nbsp
+            <a href="contact.html">CONTACT</a>&nbsp|&nbsp
+            <a href="help.html">DONATE</a>
+            </p>
+        </div>
+        <br><br>
+        <p style="font-size: 14px">&copy 2021 Lend A Paw and Team Too</p>
+        <br><br>
+    </div>
+
+</body>
+
+</html>

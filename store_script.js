@@ -8,7 +8,7 @@ function animate(div) {
     div.animate({width: '200px'}, "slow");
     setTimeout(function() {
         div.val("Order Complete");
-    },5010);
+    },5100);
     setTimeout(function() {
         div.val("Confirm Order");
     },6000);

@@ -73,25 +73,30 @@
         <br>
         <h2>Donate</h2>
         <br>
-        <p>[form here for donation]</p>
-        <br>
+        <form>
+            <p>Name:<sup>*</sup> <input type="text" id="name"></p><br>
+            <p>Organization: <input type="text" id="org"></p><br>
+            <p>Email<sup>*</sup> <input type="text" id="email"></p><br>
+            <p>Amount:<sup>*</sup> <input type="text" inputmode="numeric" pattern="[0-9]*" id="amount"></p><br>
+            <input type="button" id="button" value="Confirm Donation" onclick="alert('Thank you for your donation! We will email mail you with more information about payment methods.\n\nWe, and our animals, appreciate your help.')">
+        </form>
     </div>
 
     <div>
-        <br>
+        <br><br>
         <h2>Foster</h2>
         <br>
         <p>Since we have limited space in our shelter, fostering a pet is a great help to us. This is perfect for those that can't commit to a long-term pet, but are looking to help out in any way they can.</p>
         <br>
+        <p>One of the most important jobs is fostering orphaned animals. These animals need almost constant care and attention, and are at a very vulnerable stage of life. We require experienced foster parents to help raise baby animals. Fortunately, we offer educational seminars and training sessions for those that are inexperienced.</p><br><br>
     </div>
 
     <div>
-        <br>
         <h2>Adopt</h2>
         <br>
-        <p>Many of our animals are looking for a loving forever home!<br>
-        [possibly lead to another page showing animals currently up for adoption]</p>
+        <p>Many of our animals are looking for a loving forever home! We are always looking to match animals with suitable caregivers. Visit our list of animals looking for a home to learn more.<br>
         <br>
+        <button onclick="document.location='animals.html'">Learn More</button><br><br><br>
     </div>
 
     <div id="footer">

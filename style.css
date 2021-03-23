@@ -39,7 +39,7 @@ h3 {
     margin: 0px;
     font-variant-caps: all-small-caps;
     font-size: 32px;
-    text-shadow: 1px 1px rgba(178,219,203,1);
+    text-shadow: 1.5px 1.5px rgba(178,219,203,1);
 }
 
 p {
@@ -92,6 +92,7 @@ div {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    align-items: center;
 }
 
 /* Navigation bar styling */
