@@ -84,7 +84,7 @@ $(document).ready(function(){
 });
 </script>
 
-        <button onclick="submitOrderBtn">Submit Order</button>
+        <button>Submit Order</button>
 <!-- =======
             <p>Name*: <input type="text"  id="name"></p><br>
             <p>Phone: <input type="text"  id="phone"></p><br>
@@ -143,7 +143,7 @@ $(document).ready(function(){
                 return summary;
             }
 
-            function submitOrderBtn() {
+            $("form").submit(function(event) {
                 var submitAccept = true;
                 var errString ="Please correct the following errors:\n"
                 var email_regex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
@@ -199,7 +199,7 @@ $(document).ready(function(){
                         "We really appreciate your contribution!"
                         )
                 }
-            }
+            });
         };
 
     </script>
