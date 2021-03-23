@@ -61,7 +61,42 @@
 
         <h1>How Can You Help?</h1>
     </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous">
+    </script>
+    <script type="text/javascript">
+        
+        $("#button").click(function() {
+            var submit_accept = true;
+            err_string = "Please correct the follwoing errors:\n";
 
+            // validate name to see if its there
+            if($("#name").val() == "") {
+                err_string += "- Name field cannot be blank\n"
+                submit_accept = false;
+            }
+        
+            if(document.getElementById("email").value==""){
+                submitAccept = false;
+                errString += "- Email field cannot be blank\n";
+            }else if (!(document.getElementById("email").value.match(email_regex))){
+                submitAccept = false;
+                errString += "- Email field must be valid\n";
+            }
+
+            if ($("#amount").val() == ""){
+                submit_accept = false;
+                err_string += "Amount fiekd cannot be blank\n"
+            }
+            //Reject input if validation fails
+            if (submit_accept == false) {
+                event.preventDefault();
+                alert(err_string)
+            }else{
+                alert('Thank you for your donation! We will email you with more information about payment methods.\n\nWe, and our animals, appreciate your help.')
+            }
+        })
+
+    </script>
     <div>
         <br><br><br>
         <h2>Anyone can lend a paw</h2>
@@ -79,7 +114,7 @@
             <p>Organization: <input type="text" id="org"></p><br>
             <p>Email<sup>*</sup> <input type="text" id="email"></p><br>
             <p>Amount:<sup>*</sup> <input type="text" inputmode="numeric" pattern="[0-9]*" id="amount"></p><br>
-            <input type="button" id="button" value="Confirm Donation" onclick="alert('Thank you for your donation! We will email you with more information about payment methods.\n\nWe, and our animals, appreciate your help.')">
+            <input type="button" id="button" value="Confirm Donation">
         </form>
     </div>
 
