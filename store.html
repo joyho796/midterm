@@ -73,6 +73,7 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
+/*
 $(document).ready(function(){
   $("button").click(function(){
     var div = $("button");
@@ -82,9 +83,10 @@ $(document).ready(function(){
     div.animate({width: '180px', opacity: '0.8'}, "slow");
   });
 });
+*/
 </script>
 
-        <button>Submit Order</button>
+        <input type="sumbit" id="#button" value="Submit Order">
 <!-- =======
             <p>Name*: <input type="text"  id="name"></p><br>
             <p>Phone: <input type="text"  id="phone"></p><br>
@@ -101,6 +103,7 @@ $(document).ready(function(){
 
     <script type="text/javascript">
         window.onload = function() {
+
             for (i = 0; i < donate_items.length; i++)
                 document.getElementsByName("quantity")[i].onchange=function(){updateAllTotals()};
 
@@ -144,6 +147,13 @@ $(document).ready(function(){
             }
 
             $("form").submit(function(event) {
+                
+                var div = $("#button");
+                div.animate({height: '300px', opacity: '0.4'}, "slow");
+                div.animate({width: '300px', opacity: '0.8'}, "slow");
+                div.animate({height: '50px', opacity: '0.4'}, "slow");
+                div.animate({width: '180px', opacity: '0.8'}, "slow");
+        
                 var submitAccept = true;
                 var errString ="Please correct the following errors:\n"
                 var email_regex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
