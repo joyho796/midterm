@@ -122,15 +122,15 @@
             }
 
             $("form").submit(function(event) {
-                submitAccept = true;
-                validChecks = [true, true, true, true, true]
-                errString ="Please correct the following errors:\n"
+                var submitAccept = true;
+                var validChecks = [true, true, true, true, true]
+                var errString ="Please correct the following errors:\n"
                 var email_regex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
                 var ph_regex = /^\d{10}$/;
-                count = 0;
+                var count = 0;
                 for (i = 0; i < donate_items.length; i++)
                 {
-                    if(parseInt(getElementsByName("quantity")[i].value)=0)
+                    if(parseInt(document.getElementsByName("quantity")[i].value)=0)
                         count++;
                 }
                 if(count == donate_items.length){
@@ -138,21 +138,21 @@
                     errString += "- Please enter a non-zero quantity for atleast one item.\n";
                 }
 
-                if(getElementById("name").value==""){
+                if(document.getElementById("name").value==""){
                     validChecks[1] = submitAccept = false;
                     errString += "- Please enter your name.\n";
                 }
                 
-                if(getElementById("email").value==""){
+                if(document.getElementById("email").value==""){
                     validChecks[2] = submitAccept = false;
                     errString += "- Please enter your email ID.\n";
                 }
-                else if (!(getElementById("email").value.match(email_regex))){
+                else if (!(document.getElementById("email").value.match(email_regex))){
                     validChecks[3] = submitAccept = false;
                     errString += "- Please enter a valid email ID.\n";
                 }
 
-                if(!(getElementById("phone").value.match(ph_regex))){
+                if(!(document.getElementById("phone").value.match(ph_regex))){
                     validChecks[4] = submitAccept = false;
                     errString += "- Please enter a valid phone numnber.\n";
                 }
