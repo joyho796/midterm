@@ -56,6 +56,20 @@
             <p>Phone: <input type="text"  name="phone"></p><br>
             <p>Email: <input type="text"  name="email"></p><br>
         </form>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script> 
+$(document).ready(function(){
+  $("button").click(function(){
+    var div = $("button");
+    div.animate({height: '300px', opacity: '0.4'}, "slow");
+    div.animate({width: '300px', opacity: '0.8'}, "slow");
+    div.animate({height: '100px', opacity: '0.4'}, "slow");
+    div.animate({width: '100px', opacity: '0.8'}, "slow");
+  });
+});
+</script> 
+
         <button>Submit Order</button>
         <br><br>
         <p>[Order subtotal, tax, total confirmation and such]</p>
