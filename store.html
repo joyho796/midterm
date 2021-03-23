@@ -66,10 +66,32 @@
         <p id="summary">[Order summary]</p>
         <br>
         <form>
+<<<<<<< HEAD
+            <p>Name: <input type="text"  name="name"></p><br>
+            <p>Phone: <input type="text"  name="phone"></p><br>
+            <p>Email: <input type="text"  name="email"></p><br>
+        </form>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script> 
+$(document).ready(function(){
+  $("button").click(function(){
+    var div = $("button");
+    div.animate({height: '300px', opacity: '0.4'}, "slow");
+    div.animate({width: '300px', opacity: '0.8'}, "slow");
+    div.animate({height: '100px', opacity: '0.4'}, "slow");
+    div.animate({width: '100px', opacity: '0.8'}, "slow");
+  });
+});
+</script> 
+
+        <button>Submit Order</button>
+=======
             <p>Name*: <input type="text"  id="name"></p><br>
             <p>Phone: <input type="text"  id="phone"></p><br>
             <p>Email*: <input type="text"  id="email"></p><br>
         <input type="submit" id="button" value="Submit Order">
+>>>>>>> 688705b2d208a67f0924284a577c54e57641972d
         <br><br>
         <p id="subtotal">Sub-total: $0</p>
         <p id="tax">Tax(6.25%): $0</p>
