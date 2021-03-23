@@ -86,7 +86,9 @@
 
             function updateAllTotals()
             {
-                updateSummary();
+                orderSummary = "";
+                orderSummary = updateSummary(orderSummary);
+                $("#summary").html(summaryString)
                 var subtotal, totalAT, totalBT, tax;
                 subtotal = totalAT = totalBT = tax = 0; 
 
@@ -106,19 +108,19 @@
                 $("#total").html("Total: $" + totalAT.toFixed(2))
             }
 
-            function updateSummary()
+            function updateSummary(summary)
             {
-                summaryString = "<p>Order Summary:</p>";
+                summary = "<p>Order Summary:</p>";
                 for (i = 0; i < donate_items.length; i++)
                 {
                     quant = parseInt(document.getElementsByName("quantity")[i].value);
                     if(quant != 0){
                         number = donate_items[i].cost * quant;
                         temp = "<p>"+ quant + " " +donate_items[i].name+" = $"+number+"</p>"
-                        summaryString += temp;
+                        summary += temp;
                     }
                 }
-                $("#summary").html(summaryString)
+                return summary;
             }
 
             $("form").submit(function(event) {
@@ -161,7 +163,26 @@
                 if(submitAccept == false){
                     alert(errString)
                     event.preventDefault();
-                }
+                }/*else{
+                    var orderSummary = ""
+                    var itemDetails = ""
+                    for (i = 0; i < menuItems.length; i++) {
+                        if (parseInt(document.getElementsByName("quan" + i)[0].value) > 0) {
+                            var itemCost = menuItems[i].cost;
+                            var itemName = menuItems[i].name;
+                            var qty = parseInt(document.getElementsByName("quan" + i)[0].value)
+
+                            itemDetails = itemName + ": " + qty + " X $" + itemCost.toFixed(2) + " per portion \n";
+                            orderSummary += itemDetails;
+                        }
+                    }
+                    alert("Thanks for ordering from Jade Delight!\n\n" +
+                        "Your order: \n" + 
+                        orderSummary + "\n" +
+                       "Pickup/Delivery Time: " + time + "\n" +
+                        "Order Total: $" + $("#total").val()
+                        )
+                }   */
             });
         };
 
