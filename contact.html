@@ -4,6 +4,7 @@
     <title>LEND A PAW | Contact</title>
     <link href="style.css" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="script.js"></script>
 </head>
 
@@ -80,15 +81,26 @@
         We post pet care tips, event information, and cute animal photos!</p><br>
         <p>Instagram: @<a href="https://www.instagram.com/" target="_blank">lend-a-paw-shelter</a></p>
         <p>Facebook: <a href="https://www.facebook.com/" target="_blank">Lend A Paw Animal Shelter</a></p>
-        <br>
+        <br><br>
+        <button class="button" type="button" id="toggle" onclick="showImages()">Click for cute animals</button><br><br><br>
+        <div id="images" style="display:none">
+        <img src="images/social1.png" alt="social" style="width:60%; margin: auto"><br><br>
+        <img src="images/social2.png" alt="social" style="width:60%; margin: auto"><br><br>
+        <img src="images/social3.png" alt="social" style="width:60%; margin: auto"><br><br>
+        <button class="button" type="button" id="toggle" onclick="showImages()">Close images</button><br><br>
+
+        </div>
     </div>
     <div>
         <br>
         <h2>Come visit</h2>
         <br>
         <p>Come visit our animal shelter, your company is always welcome.</p>
-        <p>[map of address and street address]</p>
         <br>
+        <p>Address: 350 South Huntington Ave, Boston, MA 02130</p>
+        <br><br>
+        <img src="images/map.png" alt="map" style="width:70%; margin: auto">
+        <br><br><br>
     </div>
 
     <div id="footer">
@@ -104,6 +116,20 @@
         <p style="font-size: 14px">&copy 2021 Lend A Paw and Team Too</p>
         <br><br>
     </div>
+
+<script>
+function showImages() {
+
+    if (document.getElementById("images").style.display == "none") {
+        $("#images").slideDown(1000);
+        document.getElementById("toggle").innerHTML = "Close images";
+    } else {
+        $("#images").slideUp(1000);
+        document.getElementById("toggle").innerHTML = "Click for cute animals";
+    }
+
+}
+</script>
 
 </body>
 

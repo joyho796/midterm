@@ -5,6 +5,9 @@
     <link href="style.css" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="script.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="store_script.js"></script>
+
 </head>
 
 <body>
@@ -65,8 +68,10 @@
         <br><br><br>
         <h2>Bring home a treat</h2>
         <br>
-        <p>100% of the profits from our store go towards helping the lives of animals in need. <br><br>
-        Due to the pandemic, we encourage you to make orders through our online store.</p>
+        <p>100% of the profits from our store go towards helping the lives of animals in need. Buying something from our store is a great and easy way to help out while still bringing something home for yourself or your pet.</p>
+        <br>
+        <p><strong>IMPORTANT NOTICE:</strong><br>
+        Due to the pandemic, we strongly encourage you to make your orders through our online store.</p>
         <br>
     </div>
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous">
@@ -86,10 +91,14 @@
         );
     </script>
     <div>
-        <h2>Food($7/meal)&nbsp<input type="number" name="quantity" min="1" max="100" value="0"></h2>
-        <h2>Toys($5/toy)&nbsp<input type="number" name="quantity" min="1" max="100" value="0"></h2>
-        <h2>Care($11/animal)&nbsp<input type="number" name="quantity" min="1" max="100" value="0"></h2>
-        <h2>Merch($15)&nbsp<input type="number" name="quantity" min="1" max="100" value="0"></h2>
+        <h2>Food($7/meal)&nbsp</h2>
+        <input type="number" name="quantity" min="0" max="100" value="0">
+        <h2>Toys($5/toy)&nbsp</h2>
+        <input type="number" name="quantity" min="0" max="100" value="0">
+        <h2>Care($11/animal)&nbsp</h2>
+        <input type="number" name="quantity" min="0" max="100" value="0">
+        <h2>Merch($15)&nbsp</h2>
+        <input type="number" name="quantity" min="0" max="100" value="0">
     </div>
 
     <div>
@@ -100,153 +109,14 @@
             <p>Name*: <input type="text"  id="name"></p><br>
             <p>Phone: <input type="text"  id="phone"></p><br>
             <p>Email*: <input type="text"  id="email"></p><br>
-        </form>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script>
-/*
-$(document).ready(function(){
-  $("button").click(function(){
-    var div = $("button");
-    div.animate({height: '300px', opacity: '0.4'}, "slow");
-    div.animate({width: '300px', opacity: '0.8'}, "slow");
-    div.animate({height: '50px', opacity: '0.4'}, "slow");
-    div.animate({width: '180px', opacity: '0.8'}, "slow");
-  });
-});
-*/
-</script>
-
-        <input type="submit" id="button" value="Submit Order">
-<!-- =======
-            <p>Name*: <input type="text"  id="name"></p><br>
-            <p>Phone: <input type="text"  id="phone"></p><br>
-            <p>Email*: <input type="text"  id="email"></p><br>
-        <input type="submit" id="button" value="Submit Order">
->>>>>>> 688705b2d208a67f0924284a577c54e57641972d -->
-        <br><br>
-        <p id="subtotal">Sub-total: $0</p>
-        <p id="tax">Tax(6.25%): $0</p>
-        <p id="total">Total: $0</p>
-        <br><br>
+            <input type="submit" id="button" value="Submit Order">
+            <br><br>
+            <p id="subtotal">Sub-total: $0</p>
+            <p id="tax">Tax(6.25%): $0</p>
+            <p id="total">Total: $0</p>
+            <br><br>
         </form>
     </div>
-
-    <script type="text/javascript">
-        window.onload = function() {
-
-            for (i = 0; i < donate_items.length; i++)
-                document.getElementsByName("quantity")[i].onchange=function(){updateAllTotals()};
-
-            function updateAllTotals()
-            {
-                orderSummary = "";
-                orderSummary = updateSummary(orderSummary);
-                $("#summary").html(orderSummary)
-                var subtotal, totalAT, totalBT, tax;
-                subtotal = totalAT = totalBT = tax = 0;
-
-                for (i = 0; i < donate_items.length; i++)
-                {
-                    costBT = donate_items[i].cost;
-                    quant = parseInt(document.getElementsByName("quantity")[i].value)
-                    subtotal = costBT * quant;
-                    totalBT += subtotal;
-                }
-                tax = totalBT * 0.0625;
-                totalAT = totalBT + tax;
-
-                // Update totals for entire order
-                $("#subtotal").html("Sub-total: $" + totalBT.toFixed(2))
-                $("#tax").html("Tax(6.25%): $" + tax.toFixed(2))
-                $("#total").html("Total: $" + totalAT.toFixed(2))
-            }
-
-            function updateSummary(summary)
-            {
-                summary = "<p>Order Summary:</p>";
-                for (i = 0; i < donate_items.length; i++)
-                {
-                    quant = parseInt(document.getElementsByName("quantity")[i].value);
-                    if(quant != 0){
-                        number = donate_items[i].cost * quant;
-                        temp = "<p>"+ quant + " " +donate_items[i].name+" = $"+number+"</p>"
-                        summary += temp;
-                    }
-                }
-                return summary;
-            }
-
-            $("#button").click(function(){
-
-                var div = $("#button");
-                div.animate({height: '300px', opacity: '0.4'}, "slow");
-                div.animate({width: '300px', opacity: '0.8'}, "slow");
-                div.animate({height: '50px', opacity: '0.4'}, "slow");
-                div.animate({width: '180px', opacity: '0.8'}, "slow");
-
-                var submitAccept = true;
-                var errString ="Please correct the following errors:\n"
-                var email_regex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-                var ph_regex = /^\d{10}$/;
-                var count = 0;
-                for (i = 0; i < donate_items.length; i++)
-                {
-                    if(parseInt(document.getElementsByName("quantity")[i].value)==0)
-                        count++;
-                }
-                if(count == donate_items.length){
-                    submitAccept = false;
-                    errString += "- Please enter a non-zero quantity for atleast one item.\n";
-                }
-
-                if(document.getElementById("name").value==""){
-                    submitAccept = false;
-                    errString += "- Please enter your name.\n";
-                }
-
-                if(document.getElementById("email").value==""){
-                    submitAccept = false;
-                    errString += "- Please enter your email ID.\n";
-                }
-                else if (!(document.getElementById("email").value.match(email_regex))){
-                    submitAccept = false;
-                    errString += "- Please enter a valid email ID.\n";
-                }
-
-                if(!(document.getElementById("phone").value=="")){
-                    if(!(document.getElementById("phone").value.match(ph_regex))){
-                        submitAccept = false;
-                        errString += "- Please enter a valid phone numnber.\n";
-                    }
-                }
-
-                if(submitAccept == false){
-                    alert(errString)
-                }else{
-                    order_total = 0;
-                    orderSummary = "Order Summary:\n";
-                    for (i = 0; i < donate_items.length; i++)
-                    {
-                        quant = parseInt(document.getElementsByName("quantity")[i].value);
-                        if(quant != 0){
-                            number = donate_items[i].cost * quant;
-                            order_total += number
-                            temp = quant + " " +donate_items[i].name+" = $"+number+"\n"
-                            orderSummary += temp;
-                        }
-                    }
-                    order_total = 1.0625 * order_total;
-                    alert("\nThanks for your donation.\n\n" +
-                        orderSummary + "\n" +
-                        "Total Amount: $" + order_total + "\n\n" +
-                        "We really appreciate your contribution!"
-                        )
-                }
-            });
-        };
-
-    </script>
 
     <div id="footer">
         <br><br>
