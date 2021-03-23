@@ -128,6 +128,7 @@ window.onload = function() {
             for (i = 0; i < donate_items.length; i++)
             {
                 quant = parseInt(document.getElementsByName("quantity")[i].value);
+                if(document.getElementsByName("quantity")[i].value == ""){quant=0;}
                 if(quant != 0){
                     number = donate_items[i].cost * quant;
                     order_total += number
