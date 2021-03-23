@@ -163,26 +163,12 @@
                 if(submitAccept == false){
                     alert(errString)
                     event.preventDefault();
-                }/*else{
-                    var orderSummary = ""
-                    var itemDetails = ""
-                    for (i = 0; i < menuItems.length; i++) {
-                        if (parseInt(document.getElementsByName("quan" + i)[0].value) > 0) {
-                            var itemCost = menuItems[i].cost;
-                            var itemName = menuItems[i].name;
-                            var qty = parseInt(document.getElementsByName("quan" + i)[0].value)
-
-                            itemDetails = itemName + ": " + qty + " X $" + itemCost.toFixed(2) + " per portion \n";
-                            orderSummary += itemDetails;
-                        }
-                    }
-                    alert("Thanks for ordering from Jade Delight!\n\n" +
-                        "Your order: \n" + 
+                }else{
+                    alert("Thanks for your donation!\n\n" +
                         orderSummary + "\n" +
-                       "Pickup/Delivery Time: " + time + "\n" +
                         "Order Total: $" + $("#total").val()
                         )
-                }   */
+                }   
             });
         };
 
