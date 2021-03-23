@@ -44,7 +44,8 @@ window.onload = function() {
         for (i = 0; i < donate_items.length; i++)
         {
             costBT = donate_items[i].cost;
-            quant = parseInt(document.getElementsByName("quantity")[i].value)
+            if(document.getElementsByName("quantity")[i].value == ""){quant=0;}
+            else{quant = parseInt(document.getElementsByName("quantity")[i].value);}
             subtotal = costBT * quant;
             totalBT += subtotal;
         }
@@ -85,7 +86,7 @@ window.onload = function() {
         var count = 0;
         for (i = 0; i < donate_items.length; i++)
         {
-            if(parseInt(document.getElementsByName("quantity")[i].value)==0)
+            if((parseInt(document.getElementsByName("quantity")[i].value)==0)||(document.getElementsByName("quantity")[i].value==""))
                 count++;
         }
         if(count == donate_items.length){
