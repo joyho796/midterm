@@ -146,7 +146,8 @@ $(document).ready(function(){
                 return summary;
             }
 
-            $("form").submit(function(event) {
+            //$("form").submit(function(event) {
+            $("#button").click(function(){    
                 
                 var div = $("#button");
                 div.animate({height: '300px', opacity: '0.4'}, "slow");
@@ -192,7 +193,7 @@ $(document).ready(function(){
 
                 if(submitAccept == false){
                     alert(errString)
-                    event.preventDefault();
+                    // event.preventDefault();
                 }else{
                     orderSummary = "Order Summary:\n";
                     for (i = 0; i < donate_items.length; i++)
