@@ -72,51 +72,42 @@
         <br>
         <p><strong>IMPORTANT NOTICE:</strong><br>
         Due to the pandemic, we strongly encourage you to make your orders through our online store.</p>
-        <br>
-    </div>
-    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous">
-    </script>
-    <script type="text/javascript">
-        function DonateItem(name, cost)
-        {
-            this.name = name;
-            this.cost=cost;
-        }
-
-        donate_items = new Array(
-            new DonateItem("Meal(s)", 7),
-            new DonateItem("Toy(s)", 5),
-            new DonateItem("Care", 11),
-            new DonateItem("Merch", 15),
-        );
-    </script>
-    <div>
-        <h2>Food($7/meal)&nbsp</h2>
-        <input type="number" name="quantity" min="0" max="100" value="0">
-        <h2>Toys($5/toy)&nbsp</h2>
-        <input type="number" name="quantity" min="0" max="100" value="0">
-        <h2>Care($11/animal)&nbsp</h2>
-        <input type="number" name="quantity" min="0" max="100" value="0">
-        <h2>Merch($15)&nbsp</h2>
-        <input type="number" name="quantity" min="0" max="100" value="0">
+        <br><br><br>
     </div>
 
     <div>
+        <h2>Mystery Box Event</h2>
         <br>
-        <p id="summary">[Order summary]</p>
+        <p>We are currently selling items in a mystery box style! This means you choose what kind of items you want to bring home, and we'll randomly select some surprise items for you. <br><br>
+        Simply specify who you are buying the items for (your dog, your cat, your turtle, yourself, etc.) and we will pick out appropriate gifts for you.</p>
         <br>
-        <form>
-            <p>Name*: <input type="text"  id="name"></p><br>
-            <p>Phone: <input type="text"  id="phone"></p><br>
-            <p>Email*: <input type="text"  id="email"></p><br>
-            <input type="submit" id="button" value="Submit Order">
+        <h3>Meal Box ($7 each):&nbsp<input type="number" inputmode="numeric" pattern="[0-9]*" name="quantity" min="0" max="100" value="0"></h3>
+        <h3>Toy ($5 each):&nbsp<input type="number" inputmode="numeric" pattern="[0-9]*" name="quantity" min="0" max="100" value="0"></h3>
+        <h3>Care Coupon ($11 each):&nbsp<input type="number" inputmode="numeric" pattern="[0-9]*" name="quantity" min="0" max="100" value="0"></h3>
+        <h3>Merch Item ($7 each):&nbsp<input type="number" inputmode="numeric" pattern="[0-9]*" name="quantity" min="0" max="100" value="0"></h3>
+    </div>
+    <br><br>
+    <div id="flex">
+        <div style="width:35%; border-right: 1px solid rgba(122,182,184,0.5)">
+            <form>
+                <p>Name:<sup>*</sup> <input type="text"  id="name"></p><br>
+                <p>Phone: <input type="text"  id="phone"></p><br>
+                <p>Email:<sup>*</sup> <input type="text"  id="email"></p><br>
+                <p>Recipient:<sup>*</sup> <input type="text"  id="recip"></p>
+        </div>
+        <div style="width:35%">
             <br><br>
+            <p><strong>Order Summary</strong></p>
             <p id="subtotal">Sub-total: $0</p>
             <p id="tax">Tax(6.25%): $0</p>
             <p id="total">Total: $0</p>
             <br><br>
-        </form>
+        </div>
     </div>
+    <br><br>
+    <input type="button" id="button" value="Confirm Order">
+    </form>
+    <br><br><br><br>
 
     <div id="footer">
         <br><br>
