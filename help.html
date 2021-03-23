@@ -68,9 +68,9 @@
         $("#button").click(function() {
             var submit_accept = true;
             err_string = "Please correct the follwoing errors:\n";
-
+            email_regex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
             // validate name to see if its there
-            if($("#name").val() == "") {
+            if(document.getElementById("name").value == "") {
                 err_string += "- Name field cannot be blank\n"
                 submit_accept = false;
             }
@@ -83,13 +83,12 @@
                 errString += "- Email field must be valid\n";
             }
 
-            if ($("#amount").val() == ""){
+            if (document.getElementById("amount").value == ""){
                 submit_accept = false;
                 err_string += "Amount fiekd cannot be blank\n"
             }
             //Reject input if validation fails
             if (submit_accept == false) {
-                event.preventDefault();
                 alert(err_string)
             }else{
                 alert('Thank you for your donation! We will email you with more information about payment methods.\n\nWe, and our animals, appreciate your help.')
