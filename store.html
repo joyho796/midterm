@@ -66,9 +66,9 @@
         <p id="summary">[Order summary]</p>
         <br>
         <form>
-            <p>Name: <input type="text"  name="name"></p><br>
-            <p>Phone: <input type="text"  name="phone"></p><br>
-            <p>Email: <input type="text"  name="email"></p><br>
+            <p>Name*: <input type="text"  id="name"></p><br>
+            <p>Phone: <input type="text"  id="phone"></p><br>
+            <p>Email*: <input type="text"  id="email"></p><br>
         </form>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -146,7 +146,6 @@ $(document).ready(function(){
                 return summary;
             }
 
-            //$("form").submit(function(event) {
             $("#button").click(function(){    
                 
                 var div = $("#button");
@@ -170,7 +169,7 @@ $(document).ready(function(){
                     errString += "- Please enter a non-zero quantity for atleast one item.\n";
                 }
 
-                if(document.getElementById("name").value==''){
+                if(document.getElementById("name").value==""){
                     submitAccept = false;
                     errString += "- Please enter your name.\n";
                 }
@@ -193,20 +192,23 @@ $(document).ready(function(){
 
                 if(submitAccept == false){
                     alert(errString)
-                    // event.preventDefault();
                 }else{
+                    order_total = 0;
                     orderSummary = "Order Summary:\n";
                     for (i = 0; i < donate_items.length; i++)
                     {
                         quant = parseInt(document.getElementsByName("quantity")[i].value);
                         if(quant != 0){
                             number = donate_items[i].cost * quant;
+                            order_total += number
                             temp = quant + " " +donate_items[i].name+" = $"+number+"\n"
                             orderSummary += temp;
                         }
                     }
-                    alert("Thanks for your donation.\n\n" +
+                    order_total = 1.0625 * order_total;
+                    alert("\nThanks for your donation.\n\n" +
                         orderSummary + "\n" +
+                        "Total Amount: $" + order_total + "\n\n" +
                         "We really appreciate your contribution!"
                         )
                 }
