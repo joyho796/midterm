@@ -98,15 +98,15 @@
         
             if(document.getElementById("email").value==""){
                 submitAccept = false;
-                errString += "- Email field cannot be blank\n";
+                err_string += "- Email field cannot be blank\n";
             }else if (!(document.getElementById("email").value.match(email_regex))){
                 submitAccept = false;
-                errString += "- Email field must be valid\n";
+                err_string += "- Email field must be valid\n";
             }
 
             if (document.getElementById("amount").value == ""){
                 submit_accept = false;
-                err_string += "Amount fiekd cannot be blank\n"
+                err_string += "- Amount field cannot be blank\n"
             }
             //Reject input if validation fails
             if (submit_accept == false) {
@@ -117,7 +117,7 @@
         })
 
     </script>
-    
+
     <div>
         <br><br>
         <h2>Foster</h2>
